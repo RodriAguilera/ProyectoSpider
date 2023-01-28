@@ -1,0 +1,88 @@
+
+//header index
+@keyframes headerAnimate{
+    0%{background-image: url(../img/fotos/animacion1.webp);}
+    25%{background-image: url(../img/fotos/animacion2.webp)}
+    50%{background-image: url(../img/fotos/animacion3.webp);}
+    75%{background-image: url(../img/fotos/animacion4.webp);}
+    100%{background-image: url(../img/fotos/animacion5.webp);}
+}
+.encabezado{
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    animation-name: headerAnimate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@media (min-width:992px) 
+{
+    .encabezado{
+        width: $headerWidth;
+        height:$headerHeight;
+    }
+    
+}
+
+//header biografia
+.header__biografia{
+    background-image: url(../img/fotos/headerBiografia.webp);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    opacity: .9;
+    grid-area: header__biografia;
+}
+
+
+@media (min-width:992px) {
+    .header__biografia{
+    width: $headerWidth;
+    height: $headerHeight;
+    }
+}
+
+//header entrenamiento
+.header__entrenamientos{
+    @extend .header__biografia;
+    background-image: url(../img/fotos/headerEntrenamientos\ \(1\).webp);
+
+}
+
+@media (min-width:992px) {
+    .header__entrenamientos{
+    width: $headerWidth;
+    height: $headerHeight;
+    }
+}
+
+.header__indumentaria{
+    @extend .header__biografia;
+    background-image: url(../img/fotos/headerIndumentaria.webp);
+}
+
+@media (min-width:992px) {
+    .header__indumentaria{
+    width: $headerWidth;
+    height: $headerHeight;
+   
+    }
+}
+
+.header__contacto{
+    @extend .header__biografia;
+    background-image: url(../img/fotos/headerContacto.webp);
+}
+@media (min-width:992px) {
+    .header__contacto{
+    width: $headerWidth;
+    height: $headerHeight;
+     }
+}
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+
+//botoneraI
+
+.botoneraI{
+    height: 36px;
+        img:hover{
+        filter: invert(100%);
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+}
+
+//botoneraII
+
+
+.botonera__bg{
+    background-color: $mainColor;
+    height: 80px;
+}
+
+#botonera a{
+    color: $blackColor;
+    font-size: 1.2em;   
+        &:hover{
+    color: $lightColor;
+    transition: 0.5s;
+}
+}
+
+.bgHamburguesa{
+    background-color: $secondaryColor;
+}
+
+@media (min-width:992px) {
+    .bgHamburguesa{
+        background-color: rgba(128, 128, 128, 0);
+    }
+
+}
+
+.nav-img{
+    width: 85px;
+
+    &:hover{
+        filter: invert(100%);
+        cursor: pointer;
+        transition: 0.5s;
+      }
+}
+
+
+.nav-imgE{
+    width: 85px;
+    filter: invert(100%);
+    &:hover{
+        cursor: pointer;
+      }
+}
+
+
+/* footer */
+.flex{
+    display: flex;
+}
+
+.justify-content{
+    justify-content: space-around;
+   }
+
+.aligne-items{
+    align-items: center;
+}
+
+.botonera__lista{
+    text-decoration: none;
+    list-style: none;
+    padding-top: 20px;
+    color: $blackColor;
+    font-size: 1em;
+
+    a{
+        color:$blackColor;
+        &:hover{
+            color: $mainColor;
+        }
+    }
+
+}
+
+
+    /* boton contacto */
+.boton{
+    width: 100px;
+    height: 30px;
+    border: none;
+    padding: 0.5%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(236, 157, 236), rgb(134, 7, 134));
+    border-radius: 4px;
+    &:hover{
+        background: linear-gradient(to right, rgb(134, 7, 134),rgb(236, 157, 236));
+        cursor: pointer;
+        transition: 0.9s; 
+    }
+
+}
+

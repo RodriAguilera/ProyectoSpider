@@ -1,0 +1,100 @@
+//background
+
+.bg-gray{
+    background-color:$secondaryColor;
+}
+
+//textos
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    color: rgb(39, 119, 173);
+    font-size: $fontXl;
+   
+}
+
+h2{
+    color: rgb(158, 34, 142);
+    font-size: $fontL;
+}
+
+
+h3{
+    font-size: $fontM;
+}
+
+//h4 imgFondo fijo
+h4{
+    font-size: $fontXl;
+    color: rgb(255, 255, 255);
+    font-family: 'IM Fell Great Primer', serif;
+    -webkit-text-stroke: 0.2px rgb(0, 0, 0);
+
+}
+
+@media (min-width:992px){
+    h4{
+       font-size: 9em;
+    }
+}
+
+//termina h4
+
+//texto imgFondo fijo
+.textoXl{
+    @extend h4;
+    font-size: $fontM;
+    text-align: center;
+    padding-right: 80px;
+    font-family: 'Raleway', sans-serif;
+ }
+ 
+ @media (min-width:992px){
+ 
+     .textoXl{
+         padding-right: 500px;
+     }    
+ }
+
+ //termina imgFondo fijo
+ 
+.texto-claro{
+    color: rgb(134, 134, 134);
+    font-size: $fontM;
+    
+}
+
+.text__center{
+    text-align: center;
+    margin: 20px 30px 20px 30px;
+}
+.text__left{
+    text-align: left;
+    margin: 0px 50px 20px 50px;
+}
+
+.main__texto--m{
+    font-size: $fontM;
+    margin-bottom: 10px;
+    color: $lightColor;
+}
+
+.p-center{
+    padding: 10px 20px 10px 20px;
+}
+
+.rojess{
+    color: $blackColor;
+    &:hover{
+        color: $lightColor;
+    }
+
+}
+
+#rojess{
+    font-size: 0.9em;
+}

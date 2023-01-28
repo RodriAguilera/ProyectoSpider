@@ -1,0 +1,201 @@
+
+//imagenes
+
+.img-center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  
+#cardImg{
+      width: 100px;
+      padding: 5%;
+}
+
+#cardShort{
+    height:  270px;
+    width: 270px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+  
+  /*==== Dinamismo===== */
+       /* cards */
+           /* kick boxeo funcional */
+           .card__container{
+              width: 415px;
+              overflow: hidden;
+          }
+          
+          
+          @media (min-width:992px){
+              .cards:hover img{
+                  transition: all 1s;
+                  filter: grayscale(80%);
+                  -webkit-transform:scale(1.3);transform:scale(1.3);
+              }
+          }
+          
+  
+  
+  
+  // imgFondo fijo
+  
+  .imgFondo{
+      background-image: url(../img/fotos/imgFondo.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: $headerHeight;
+      width: 100%;
+      height: 50vh;
+      background-position: center;
+      filter: grayscale(0.8);
+      overflow: scroll;   
+    
+  }
+  
+  @media (min-width:992px){
+      .imgFondo{
+          background-image: url(../img/fotos/imgFondo.webp);
+          background-attachment: fixed;
+          height: $headerHeight;
+          overflow:hidden;
+  
+      }
+  }
+  
+
+
+  //formulario
+  
+  .form-register{
+      width: 300px;
+      background: linear-gradient(to right, rgb(134, 7, 134), rgb(255, 23, 255));
+      padding: 20px;
+      margin: auto;
+      font-size: 1em;
+      overflow: hidden;
+  
+  }
+  
+
+/* GRIDS contacto */
+
+#contenedor-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, auto);
+    grid-template-areas: 
+    "botoneraI"
+    "botoneraII"
+    "header__contacto"
+    "titulo"
+    "blockI"
+    "blockII"
+    "mapa"
+    "footer"
+    ;
+	
+}
+
+@media (min-width:1024px){
+    #contenedor-grid{
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas:
+        "botoneraI botoneraI"
+        "botoneraII botoneraII"
+        "header__contacto header__contacto"
+        "titulo titulo"
+        "blockI blockI"
+        "blockII mapa"
+        "footer footer"
+         ;
+    }
+}
+    /* grid areas contacto */
+
+.botoneraI{
+    grid-area: botoneraI;
+}
+
+.botoneraII{
+    grid-area: botoneraII;
+}
+
+.header__contacto{
+    grid-area: header__contacto;
+    width: $headerWidth;
+}
+
+.titulo{
+    grid-area: titulo;
+}
+
+.blockI{
+    grid-area: blockI;
+}
+
+.blockII{
+    grid-area: blockII;
+}
+
+.mapa{
+    grid-area: mapa;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+  
+  
+  /* GRIDS biografia */
+
+  #gridBiografia{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas: 
+    "botoneraI"
+    "botoneraII"
+    "header__biografia"
+    "presentacion"
+    "videoI"
+    "videoII"
+    "footer"
+    ;
+	
+}
+
+@media (min-width:992px){
+    #gridBiografia{
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(5,autofill);
+        grid-template-areas:
+        "botoneraI botoneraI botoneraI"
+        "botoneraII botoneraII botoneraII"
+        "header__biografia header__biografia header__biografia"
+        "videoI presentacion videoII"
+       
+        "footer footer footer"
+         ;
+
+    }
+}
+
+
+.presentacion{
+    grid-area: presentacion;
+}
+
+.videoI{
+    grid-area: videoI;
+}
+
+.videoII{
+    grid-area: videoII;
+}
+
+
