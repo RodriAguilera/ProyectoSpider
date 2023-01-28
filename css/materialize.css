@@ -6088,7 +6088,7 @@ select:focus {
 
 button:focus {
   outline: none;
-  background-color: #2ab7a9;
+
 }
 
 label {
@@ -8801,7 +8801,7 @@ input[type=range]::-ms-thumb {
 }
 
 .datepicker-day-button:focus {
-  background-color: rgba(43, 161, 150, 0.25);
+ 
 }
 
 /* Footer */
