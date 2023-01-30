@@ -10,6 +10,9 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 
+  <!-- link fresco -->
+  <link rel="stylesheet" type="text/css" href="../css/fresco.css" />
+
   <meta name="description" content="Indumentaria oficial Mauricio Spider Tazzioli, sé parte de mi equipo">
   <meta name="keywords"  content="Kick boxing, profesor UNC, Planes personalizados, Boxeo, funcional, entrenamiento, indumentaria">
   </head>
@@ -110,21 +113,42 @@
 <main>
 
   <h1 class="text-center my-5 wow animate__animated animate__backInDown">INDUMENTARIA MST</h1>
+
+  <!-- CARDS -->
 <section class="row d-flex justify-content-center wow animate__animated animate__backInDown">
+
+  <!-- CardI -->
 <div class="card col-sm-12 col-lg-6 text-center mx-5 my-3" style="width: 18rem;">
 
-  <img src="../img/fotos/remera.webp" class="card-img-top" alt="Remera negra con logo de araña color blanco" >
+
+  <a
+  href="../img/fotos/remera.webp"
+  class="fresco"
+  data-fresco-group="indumentaria"
+  data-fresco-group-options="ui: 'inside'"
+  data-fresco-caption="Remera de entrenamiento"
+  >
+  <img src="../img/fotos/remera.webp" class="card-img-top" alt="Remera negra con logo de araña color blanco" > 
+</a>
+
   <div class="card-body">
+   
     <h3 class="card-title pt-3">Remera de entrenamiento</h3>
     <p class="card-text">Remera de neopren con tecnología de respiración, absorción de humedad, mantiene el cuerpo seco. Sistema Aeroready</p>
     <a href="./error.html" class="btn btn-primary">Añadir al carrito</a>
   </div>
 </div>
 
+
+<!-- CardII -->
 <div class="card col-sm-12 col-lg-6 text-center mx-5 my-3" style="width: 18rem;">
 
+
+  <a href="../img/fotos/short.webp" class="fresco" data-fresco-group="indumentaria"
+  data-fresco-caption="Short de Entrenamiento de neopren"
+  >
   <img src="../img/fotos/short.webp" id="cardShort" class="card-img-top py-5 pe-4" alt="short con logo de araña color negro">
-  
+  </a>
 <div class="card-body">
     <h3 class="card-title">Short de Entrenamiento de neopren</h3>
     <p class="card-text">Short de Team Spider 80% algodón y 20% poliester para mayor comodidad y respiración para el cuerpo. Sistema HeatReady</p>
@@ -187,6 +211,13 @@ new WOW().init();
 
 <script type="text/javascript" src="../js/materialize.min.js"></script>
 
+<!-- js fresco -->
+
+<script
+  type="text/javascript"
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+></script>
+<script type="text/javascript" src="../js/fresco.min.js"></script>
 
 </body>
 </html>

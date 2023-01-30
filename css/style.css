@@ -398,7 +398,7 @@ h4, .h4, .textoXl {
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -534,14 +534,7 @@ h3, .h3 {
   }
 }
 
-h4, .h4, .textoXl {
-  font-size: calc(1.275rem + 0.3vw);
-}
-@media (min-width: 1200px) {
-  h4, .h4, .textoXl {
-    font-size: 1.5rem;
-  }
-}
+
 
 h5, .h5 {
   font-size: 1.25rem;
@@ -980,7 +973,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
