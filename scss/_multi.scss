@@ -162,7 +162,7 @@
     "botoneraI"
     "botoneraII"
     "header__biografia"
-    "presentacion"
+    "contenedor"
     "videoI"
     "videoII"
     "footer"
@@ -178,7 +178,7 @@
         "botoneraI botoneraI botoneraI"
         "botoneraII botoneraII botoneraII"
         "header__biografia header__biografia header__biografia"
-        "videoI presentacion videoII"
+        "videoI contenedor videoII"
        
         "footer footer footer"
          ;
@@ -187,8 +187,8 @@
 }
 
 
-.presentacion{
-    grid-area: presentacion;
+#contenedor{
+    grid-area: contenedor;
 }
 
 .videoI{

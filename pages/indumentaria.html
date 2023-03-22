@@ -77,9 +77,9 @@
               <a class="nav-link" href="./contacto.html">Contacto
               </a>
               <li class="nav-item">
-                <a class="nav-link" href="./error.html">
+                <a class="nav-link" href="./carrito.html">
                
-              <button type="button" class="btn btn-outline-dark mx-4">
+              <button id="btnCarrito" type="button" class="btn btn-outline-dark mx-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
                   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
                 </svg>
@@ -118,7 +118,7 @@
 <section class="row d-flex justify-content-center wow animate__animated animate__backInDown">
 
   <!-- CardI -->
-<div class="card col-sm-12 col-lg-6 text-center mx-5 my-3" style="width: 18rem;">
+<div  class="card col-sm-12 col-lg-6 text-center mx-5 my-3" style="width: 18rem;">
 
 
   <a
@@ -135,7 +135,7 @@
    
     <h3 class="card-title pt-3">Remera de entrenamiento</h3>
     <p class="card-text">Remera de neopren con tecnología de respiración, absorción de humedad, mantiene el cuerpo seco. Sistema Aeroready</p>
-    <a href="./error.html" class="btn btn-primary">Añadir al carrito</a>
+    <button onclick="agregarProducto('Remera', 10000)">Agregar al carrito</button>
   </div>
 </div>
 
@@ -152,13 +152,17 @@
 <div class="card-body">
     <h3 class="card-title">Short de Entrenamiento de neopren</h3>
     <p class="card-text">Short de Team Spider 80% algodón y 20% poliester para mayor comodidad y respiración para el cuerpo. Sistema HeatReady</p>
-    <a href="./error.html" class="btn btn-primary">Añadir al carrito</a>
+    <button onclick="agregarProducto('Short', 12000)">Agregar al carrito</button>
   </div>
 </div>
 </section>
 </main>
-
-
+<div class="text-center">
+<h2>Carrito</h2>
+	<ul id="carrito"></ul>
+	<p class="py-3 px-5">Total: $<span id="total"></span></p>
+	<button onclick="vaciarCarrito()">Vaciar carrito</button>
+</div>
 <!--termina main  -->
 
 
@@ -218,6 +222,9 @@ new WOW().init();
   src="https://code.jquery.com/jquery-3.6.0.min.js"
 ></script>
 <script type="text/javascript" src="../js/fresco.min.js"></script>
+
+<!-- MAIN JS -->
+<script src="../js/main.js"></script>
 
 </body>
 </html>

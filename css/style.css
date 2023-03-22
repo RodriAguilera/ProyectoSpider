@@ -370,18 +370,18 @@ h4, .h4, .textoXl {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(7, auto);
-  grid-template-areas: "botoneraI" "botoneraII" "header__biografia" "presentacion" "videoI" "videoII" "footer";
+  grid-template-areas: "botoneraI" "botoneraII" "header__biografia" "contenedor" "videoI" "videoII" "footer";
 }
 
 @media (min-width: 992px) {
   #gridBiografia {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, autofill);
-    grid-template-areas: "botoneraI botoneraI botoneraI" "botoneraII botoneraII botoneraII" "header__biografia header__biografia header__biografia" "videoI presentacion videoII" "footer footer footer";
+    grid-template-areas: "botoneraI botoneraI botoneraI" "botoneraII botoneraII botoneraII" "header__biografia header__biografia header__biografia" "videoI contenedor videoII" "footer footer footer";
   }
 }
-.presentacion {
-  grid-area: presentacion;
+#contenedor {
+  grid-area: contenedor;
 }
 
 .videoI {
@@ -398,7 +398,7 @@ h4, .h4, .textoXl {
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
- :root {
+:root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -534,7 +534,14 @@ h3, .h3 {
   }
 }
 
-
+h4, .h4, .textoXl {
+  font-size: calc(1.275rem + 0.3vw);
+}
+@media (min-width: 1200px) {
+  h4, .h4, .textoXl {
+    font-size: 1.5rem;
+  }
+}
 
 h5, .h5 {
   font-size: 1.25rem;
@@ -973,7 +980,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -3189,11 +3196,11 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #c4719a;
-  --bs-btn-border-color:  #c4719a;
+  --bs-btn-bg: #0d6efd;
+  --bs-btn-border-color: #0d6efd;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #e096bf;
-  --bs-btn-hover-border-color: #e096bf;
+  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-hover-border-color: #0a58ca;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #0a58ca;
@@ -3446,8 +3453,8 @@ textarea.form-control-lg {
   --bs-btn-color: #212529;
   --bs-btn-border-color: #212529;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #b4c1ce;
-  --bs-btn-hover-border-color: #d9e2eb;
+  --bs-btn-hover-bg: #212529;
+  --bs-btn-hover-border-color: #212529;
   --bs-btn-focus-shadow-rgb: 33, 37, 41;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #212529;
@@ -4507,7 +4514,7 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: rgb(228, 216, 216);
+  --bs-card-bg: #fff;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;

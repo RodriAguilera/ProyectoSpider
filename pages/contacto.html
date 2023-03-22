@@ -114,20 +114,18 @@
 
    <div class="blockII text__left">
       <h2>Formulario</h2>
-      <form class="form-register text__left mx-0">
-  <form action="envio.php" method="post">
-      <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" id="nombre" placeholder= "Ingrese su nombre"><br>
-      <label for="cel">Celular</label>
-      <input type="cel" name="celular" id="cel" placeholder="Ingrese celular"><br>
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" placeholder="Correo electronico"><br>
-      <label for="mensaje">Dejá tu mensaje </label><br>
-      <textarea name="" id="" cols="30" rows="10"></textarea><br>
-      <input type="submit" value="Enviar">
-      <input type="reset" value="Cancelar">
-
-  </form>
+      <form id="mi-formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono"><br><br>
+        <input type="button" value="Enviar" onclick="enviarFormulario()">
+        <input type="button" value="Cancelar" onclick="limpiarFormulario()">
+      </form>
 </div>
 
 <!-- termina formulario -->
@@ -187,6 +185,8 @@
 
 <script type="text/javascript" src="../js/materialize.min.js"></script>
 
+<!-- MAIN JS -->
+<script src="../js/main.js"></script>
 
 </body>
 </html>
