@@ -79,7 +79,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="./carrito.html">
                
-              <button id="btnCarrito" type="button" class="btn btn-outline-dark mx-4">
+              <button  type="button" class=" btn btn-outline-dark mx-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
                   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
                 </svg>
@@ -115,10 +115,11 @@
   <h1 class="text-center my-5 wow animate__animated animate__backInDown">INDUMENTARIA MST</h1>
 
   <!-- CARDS -->
-<section class="row d-flex justify-content-center wow animate__animated animate__backInDown">
+<section id="product-list" class="row d-flex justify-content-center wow animate__animated animate__backInDown">
+
 
   <!-- CardI -->
-<div  class="card col-sm-12 col-lg-6 text-center mx-5 my-3" style="width: 18rem;">
+<div class="card col-sm-12 col-lg-6 text-center mx-5 my-3" style="width: 18rem;">
 
 
   <a
@@ -135,12 +136,15 @@
    
     <h3 class="card-title pt-3">Remera de entrenamiento</h3>
     <p class="card-text">Remera de neopren con tecnología de respiración, absorción de humedad, mantiene el cuerpo seco. Sistema Aeroready</p>
-    <button onclick="agregarProducto('Remera', 10000)">Agregar al carrito</button>
+    <h5>Precio <br> $10000</h5>
+    <button class="add-to-cart" data-id="1" data-name="Remera" data-price="10000">Agregar al carrito</button>
   </div>
 </div>
 
 
 <!-- CardII -->
+
+
 <div class="card col-sm-12 col-lg-6 text-center mx-5 my-3" style="width: 18rem;">
 
 
@@ -152,17 +156,20 @@
 <div class="card-body">
     <h3 class="card-title">Short de Entrenamiento de neopren</h3>
     <p class="card-text">Short de Team Spider 80% algodón y 20% poliester para mayor comodidad y respiración para el cuerpo. Sistema HeatReady</p>
-    <button onclick="agregarProducto('Short', 12000)">Agregar al carrito</button>
+    <h5>Precio <br> $12000</h5>
+    <button class="add-to-cart" data-id="2" data-name="Short" data-price="12000">Agregar al carrito</button>
   </div>
 </div>
 </section>
 </main>
 <div class="text-center">
-<h2>Carrito</h2>
-	<ul id="carrito"></ul>
-	<p class="py-3 px-5">Total: $<span id="total"></span></p>
-	<button onclick="vaciarCarrito()">Vaciar carrito</button>
+<h2>Carrito de compra</h2>
+	<ul id="cart-list">
+		<li>No hay productos en el carrito.</li>
+	</ul>
+	<p>Total: <span id="total-price">$0</span></p>
 </div>
+
 <!--termina main  -->
 
 
@@ -225,6 +232,8 @@ new WOW().init();
 
 <!-- MAIN JS -->
 <script src="../js/main.js"></script>
+
+
 
 </body>
 </html>
