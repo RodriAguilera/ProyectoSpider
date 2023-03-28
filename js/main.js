@@ -1,9 +1,19 @@
+// let parrafo = document.createElement("p");
+
+// parrafo.innerHTML = "Es conocido por su estilo agresivo y valiente, y por su capacidad para adaptarse a las diferentes situaciones que se presentan en una pelea. Fuera del ring, Mauri es un modelo a seguir para muchos jóvenes que sueñan con convertirse en deportistas profesionales, por su dedicación y su compromiso con la excelencia. A través de su experiencia, Mauri ha aprendido la importancia de la disciplina, la perseverancia y el trabajo duro para alcanzar los objetivos y superar los desafíos en la vida."
+
+// let presentacion = document.getElementById("contenedor");
+// contenedor.append(parrafo);
+
+
 let parrafo = document.createElement("p");
 
-parrafo.innerHTML = "Es conocido por su estilo agresivo y valiente, y por su capacidad para adaptarse a las diferentes situaciones que se presentan en una pelea. Fuera del ring, Mauri es un modelo a seguir para muchos jóvenes que sueñan con convertirse en deportistas profesionales, por su dedicación y su compromiso con la excelencia. A través de su experiencia, Mauri ha aprendido la importancia de la disciplina, la perseverancia y el trabajo duro para alcanzar los objetivos y superar los desafíos en la vida."
+let texto = document.createTextNode("Este sitio web no es real y ha sido creado únicamente con fines de estudio y práctica. Todas las informaciones, contenidos y funcionalidades que se encuentran aquí son simulaciones y no representan ninguna entidad real. La finalidad de este sitio es proporcionar una experiencia de aprendizaje virtual, donde los usuarios puedan interactuar con diferentes elementos de un sitio web y así mejorar sus habilidades en diseño web, programación y otros aspectos relacionados");
 
-let presentacion = document.getElementById("contenedor");
-contenedor.append(parrafo);
+parrafo.appendChild(texto);
+
+document.body.appendChild(parrafo);
+
 
 // FORMULARIO
 
