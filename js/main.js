@@ -1,21 +1,12 @@
-// let parrafo = document.createElement("p");
+const agregarParrafo = (texto) => {
+    const parrafo = document.createElement("p");
+    parrafo.textContent = texto;
+    document.body.append(parrafo);
+  }
 
-// parrafo.innerHTML = "Es conocido por su estilo agresivo y valiente, y por su capacidad para adaptarse a las diferentes situaciones que se presentan en una pelea. Fuera del ring, Mauri es un modelo a seguir para muchos jóvenes que sueñan con convertirse en deportistas profesionales, por su dedicación y su compromiso con la excelencia. A través de su experiencia, Mauri ha aprendido la importancia de la disciplina, la perseverancia y el trabajo duro para alcanzar los objetivos y superar los desafíos en la vida."
-
-// let presentacion = document.getElementById("contenedor");
-// contenedor.append(parrafo);
-
-
-let parrafo = document.createElement("p");
-
-let texto = document.createTextNode("Este sitio web no es real y ha sido creado únicamente con fines de estudio y práctica. Todas las informaciones, contenidos y funcionalidades que se encuentran aquí son simulaciones y no representan ninguna entidad real. La finalidad de este sitio es proporcionar una experiencia de aprendizaje virtual, donde los usuarios puedan interactuar con diferentes elementos de un sitio web y así mejorar sus habilidades en diseño web, programación y otros aspectos relacionados");
-
-parrafo.appendChild(texto);
-
-document.body.appendChild(parrafo);
-
-
-// FORMULARIO
+  agregarParrafo("Este sitio web no es real y ha sido creado únicamente con fines de estudio y práctica. Todas las informaciones, contenidos y funcionalidades que se encuentran aquí son simulaciones y no representan ninguna entidad real. La finalidad de este sitio es proporcionar una experiencia de aprendizaje virtual, donde los usuarios puedan interactuar con diferentes elementos de un sitio web y así mejorar sus habilidades en diseño web, programación y otros aspectos relacionados");
+  
+//FORMULARIO
 
 function enviarFormulario() {
     let nombre = document.getElementById("nombre").value;
@@ -62,46 +53,34 @@ function loadCart() {
 function renderCart() {
     cartList.innerHTML = '';
 
-    if (cart.length === 0) {
+    if (!cart.length) {
         const emptyCart = document.createElement('li');
         emptyCart.textContent = 'No hay productos en el carrito.';
         cartList.appendChild(emptyCart);
     } else {
-        let totalPrice = 0;
-
-        for (let i = 0; i < cart.length; i++) {
-            const product = cart[i];
-
+        let totalPrice = cart.reduce((acc, product) => {
             const item = document.createElement('li');
             item.textContent = `${product.name} - Cantidad: ${product.quantity} - Precio: $${product.price}`;
-
             cartList.appendChild(item);
-
-            totalPrice += product.price * product.quantity;
-        }
+            return acc + (product.price * product.quantity);
+        }, 0);
 
         total.textContent = `$${totalPrice}`;
     }
 }
 
 function addToCart(id, name, price) {
-    for (let i = 0; i < cart.length; i++) {
-        const product = cart[i];
-
-        if (product.id === id) {
-            product.quantity++;
-            saveCart();
-            renderCart();
-            return;
-        }
+    const productIndex = cart.findIndex(product => product.id === id);
+    if (productIndex !== -1) {
+        cart[productIndex].quantity++;
+    } else {
+        cart.push({
+            id,
+            name,
+            price,
+            quantity: 1
+        });
     }
-
-    cart.push({
-        id: id,
-        name: name,
-        price: price,
-        quantity: 1
-    });
 
     saveCart();
     renderCart();
@@ -117,3 +96,30 @@ product2Btn.addEventListener('click', () => {
 
 loadCart();
 renderCart();
+
+//boton con libreria
+
+let botonComprar = document.getElementById("comprar");
+botonComprar.addEventListener("click", () =>{
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Algo salio mal!',
+       
+      })
+})
+
+//fetch
+
+const cont = document.getElementById("contenido");
+function traer(){
+    fetch('https://randomuser.me/api/')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data.results["0"]);
+        cont.innerHTML =
+        `<img src="${data.results["0"].picture.large}" width="100px" class="img-fluid rounded-circle">
+        <p>Nombre:"${data.results["0"].name.first}" </p>
+        `
+    })
+}
