@@ -1,3 +1,20 @@
+let infoMauricio = {
+  nombre: "Mauricio Tazzioli",
+  edad: 27,
+  categoria: "Peso mosca",
+  record: {
+    victorias: 15,
+    derrotas: 3,
+    empates: 2
+  }
+};
+
+
+let ultimosOponentes = ["Jose Nievas", "Marcos Romero", "Bryan Oviedo", "Santiago Lalane"];
+
+ultimosOponentes.push("Mauricio Marsilli");
+
+
 const agregarParrafo = (texto) => {
     const parrafo = document.createElement("p");
     parrafo.textContent = texto;
@@ -30,86 +47,8 @@ function enviarFormulario() {
         document.getElementById("telefono").value = "";
  }
 
-// CARRITO
 
-
-const productList = document.getElementById('product-list');
-const product1Btn = productList.querySelector('[data-id="1"]');
-const product2Btn = productList.querySelector('[data-id="2"]');
-
-const cartList = document.getElementById('cart-list');
-const total = document.getElementById('total-price');
-
-let cart = [];
-
-function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-function loadCart() {
-    cart = JSON.parse(localStorage.getItem('cart') || '[]');
-}
-
-function renderCart() {
-    cartList.innerHTML = '';
-
-    if (!cart.length) {
-        const emptyCart = document.createElement('li');
-        emptyCart.textContent = 'No hay productos en el carrito.';
-        cartList.appendChild(emptyCart);
-    } else {
-        let totalPrice = cart.reduce((acc, product) => {
-            const item = document.createElement('li');
-            item.textContent = `${product.name} - Cantidad: ${product.quantity} - Precio: $${product.price}`;
-            cartList.appendChild(item);
-            return acc + (product.price * product.quantity);
-        }, 0);
-
-        total.textContent = `$${totalPrice}`;
-    }
-}
-
-function addToCart(id, name, price) {
-    const productIndex = cart.findIndex(product => product.id === id);
-    if (productIndex !== -1) {
-        cart[productIndex].quantity++;
-    } else {
-        cart.push({
-            id,
-            name,
-            price,
-            quantity: 1
-        });
-    }
-
-    saveCart();
-    renderCart();
-}
-
-product1Btn.addEventListener('click', () => {
-    addToCart(1, 'Remera', 10000);
-});
-
-product2Btn.addEventListener('click', () => {
-    addToCart(2, 'Short', 12000);
-});
-
-loadCart();
-renderCart();
-
-//boton con libreria
-
-let botonComprar = document.getElementById("comprar");
-botonComprar.addEventListener("click", () =>{
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Algo salio mal!',
-       
-      })
-})
-
-//fetch
+ //fetch
 
 const cont = document.getElementById("contenido");
 function traer(){
@@ -123,3 +62,45 @@ function traer(){
         `
     })
 }
+
+
+// CARRITO
+function aplicarDescuento(precioInicial, porcentajeDescuento) {
+    let descuento = precioInicial * (porcentajeDescuento / 100);
+    let precioFinal = precioInicial - descuento;
+    return precioFinal;
+}
+
+function aplicarDescuentoArticulo1() {
+    let precioInicial = 10000;
+    let porcentajeDescuento = 10;
+    let precioFinal = aplicarDescuento(precioInicial, porcentajeDescuento);
+    document.getElementById("precio-final-articulo-1").innerHTML = `$${precioFinal}`;
+}
+
+function aplicarDescuentoArticulo2() {
+    let precioInicial = 12000;
+    let porcentajeDescuento = 20;
+    let precioFinal = aplicarDescuento(precioInicial, porcentajeDescuento);
+    document.getElementById("precio-final-articulo-2").innerHTML = `$${precioFinal}`;
+}
+
+document.getElementById("btn-descuento-articulo-1").addEventListener("click", aplicarDescuentoArticulo1);
+
+document.getElementById("btn-descuento-articulo-2").addEventListener("click", aplicarDescuentoArticulo2);
+
+
+
+//boton con libreria
+
+let botonComprar = document.getElementById("comprar");
+botonComprar.addEventListener("click", () =>{
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Algo salio mal!',
+       
+      })
+})
+
+
